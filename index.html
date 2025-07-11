@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipopUp</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+
+         <!--INDEX HTML-->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CipopUp</h1>
+        </div>
+        <nav>
+            <a href="#" id="beranda-link">Beranda</a>
+            <a href="#" id="produk-link">Produk</a>
+            <a href="#" id="keranjang-link">Keranjang</a>
+            <a href="#" id="kontak-link">Kontak</a>
+        </nav>
+    </header>
+
+        <!-- Beranda  -->
+        <section id="beranda" class="section show">
+            <h2> Welcome to CipopUp </h2>
+            <p> Complete your style with a bracelet that is not only beautiful, but also meaningful. Because every detail reflects who you are..</p>
+            <div class="products"></div> 
+                </div>
+            </div>
+        </section>
+
+        <!-- Produk  -->
+        <section id="produk" class="section hide">
+            <h2>Katalog Produk</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="img/gelang1.jpg" alt="patricia">
+                    <div class="product-info">
+                        <div class="product-title">patricia</div>
+                        <div class="product-price">Rp 50.000</div>
+                        <p class="product-description">cuttie.</p>
+                        <button class="btn beli-btn" data-name="patricia" data-price="50000">Beli</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img/gelang2.jpg" alt="velora">
+                    <div class="product-info">
+                        <div class="product-title">velora</div>
+                        <div class="product-price">Rp 50.000</div>
+                        <p class="product-description">georgeus.</p>
+                        <button class="btn beli-btn" data-name="velora" data-price="50000">Beli</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img/gelang3.jpg" alt="Gaia stone">
+                    <div class="product-info">
+                        <div class="product-title">Gaia stone</div>
+                        <div class="product-price">Rp 50.000</div>
+                        <p class="product-description">happyvibes.</p>
+                        <button class="btn beli-btn" data-name="Gaia stone" data-price="50000">Beli</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img/gelang4.jpg" alt="amara">
+                    <div class="product-info">
+                        <div class="product-title"> amara</div>
+                        <div class="product-price">Rp 50.000</div>
+                        <p class="product-description">yummi.</p>
+                        <button class="btn beli-btn" data-name="amara" data-price="50000">Beli</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="img/gelang5.jpg" alt="ZenAura">
+                    <div class="product-info">
+                        <div class="product-title"> ZenAura</div>
+                        <div class="product-price">Rp 50.000</div>
+                        <p class="product-description">elegant.</p>
+                        <button class="btn beli-btn" data-name=" ZenAura" data-price="50000">Beli</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keranjang  -->
+        <section id="keranjang" class="section hide">
+            <h2>Keranjang Belanja</h2>
+            <div id="keranjang-container">
+                <div id="keranjang-items">
+                    <p id="keranjang-kosong">belanja yu biar ga kosong hihihi.</p>
+                </div>
+                <div id="total-harga">Total: Rp 0</div>
+                <button class="btn" id="checkout-btn">Checkout</button>
+            </div>
+        </section>
+
+        <!-- Kontak  -->
+        <section id="kontak" class="section hide">
+            <div class="kontak-container">
+              <h2>Hubungi Kami</h2>
+              <p>Jika anda bingung dan mempunyai pertanyaan silahkan hubungi kami:</p>
+              <ul>
+                <li><i class="fas fa-phone"></i> WhatsApp: 0890-9750-3321</li>
+                <li><i class="fas fa-envelope"></i> Email: CipopUp@gmail.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> Alamat: Jl. indah No. 13, Bandung</li>
+                <li><i class="fab fa-instagram"></i> Instagram: @CipopUp
+                </li>
+              </ul>
+            </div>
+          </section>
+
+    <!-- Modal Pembelian -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Produk ditambahkan ke keranjang!</h2>
+            <p id="modal-product-name"></p>
+            <button class="btn" id="lanjut-belanja">Lanjut Belanja</button>
+            <button class="btn" id="lihat-keranjang">Lihat Keranjang</button>
+        </div>
+    </div>
+
+    <!-- Modal Checkout -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="checkout-close">&times;</span>
+            <h2>Checkout Berhasil</h2>
+            <p>Maaciw udah beli di CipopUp,semoga suka ya!</p>
+            <button class="btn" id="kembali-beranda">Kembali ke Beranda</button>
+        </div>
+    </div>
+
+    <!-- Modal Kontak -->
+    <div id="kontak-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="kontak-close">&times;</span>
+            <h2>Pesan Terkirim</h2>
+            <p>Terima kasih telah menghubungi kami. Kami akan segera membalas pesan Anda.</p>
+            <button class="btn" id="tutup-kontak">Tutup</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CipopUp. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script>
+        //=========== JAVA SCRIPT =============//
+        // Navigation functionality
+        document.getElementById('beranda-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('beranda');
+        });
+        
+        document.getElementById('produk-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('produk');
+        });
+        
+        document.getElementById('keranjang-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('keranjang');
+        });
+        
+        document.getElementById('kontak-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('kontak');
+        });
+        
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('show');
+                section.classList.add('hide');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hide');
+            document.getElementById(sectionId).classList.add('show');
+        }
+        
+        // Shopping cart functionality
+        let cart = [];
+        
+        // Add event listeners to all buy buttons
+        const buyButtons = document.querySelectorAll('.beli-btn');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-name');
+                const productPrice = parseInt(this.getAttribute('data-price'));
+                
+                // Add to cart
+                addToCart(productName, productPrice);
+                
+                // Show modal
+                const modal = document.getElementById('modal');
+                document.getElementById('modal-product-name').textContent = productName + " - Rp " + formatPrice(productPrice);
+                modal.style.display = 'block';
+            });
+        });
+        
+        // Close modal when clicking on X
+        const closeButtons = document.querySelectorAll('.close');
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+        
+        // Continue shopping button
+        document.getElementById('lanjut-belanja').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+        });
+        
+        // View cart button
+        document.getElementById('lihat-keranjang').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+            showSection('keranjang');
+        });
+        
+        // Add to cart function
+        function addToCart(name, price) {
+            // Check if item already in cart
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            // Update cart display
+            updateCartDisplay();
+        }
+        
+        // Update cart display
+        function updateCartDisplay() {
+            const keranjangItems = document.getElementById('keranjang-items');
+            const keranjangKosong = document.getElementById('keranjang-kosong');
+            const totalHarga = document.getElementById('total-harga');
+            
+            // Clear current items
+            keranjangItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                keranjangItems.appendChild(keranjangKosong);
+                totalHarga.textContent = 'Total: Rp 0';
+                return;
+            }
+            
+            // Add each item to the display
+            let total = 0;
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'keranjang-item';
+                
+                const itemInfo = document.createElement('div');
+                itemInfo.textContent = `${item.name} x ${item.quantity}`;
+                
+                const itemPrice = document.createElement('div');
+                itemPrice.textContent = `Rp ${formatPrice(item.price * item.quantity)}`;
+                
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Hapus';
+                removeButton.className = 'btn';
+                removeButton.style.marginLeft = '10px';
+                removeButton.addEventListener('click', function() {
+                    removeFromCart(item.name);
+                });
+                
+                itemDiv.appendChild(itemInfo);
+                const priceAndRemove = document.createElement('div');
+                priceAndRemove.style.display = 'flex';
+                priceAndRemove.style.alignItems = 'center';
+                priceAndRemove.appendChild(itemPrice);
+                priceAndRemove.appendChild(removeButton);
+                itemDiv.appendChild(priceAndRemove);
+                
+                keranjangItems.appendChild(itemDiv);
+                
+                total += item.price * item.quantity;
+            });
+            
+            totalHarga.textContent = `Total: Rp ${formatPrice(total)}`;
+        }
+        
+        // Remove from cart
+        function removeFromCart(name) {
+            const index = cart.findIndex(item => item.name === name);
+            
+            if (index !== -1) {
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity -= 1;
+                } else {
+                    cart.splice(index, 1);
+                }
+                
+                updateCartDisplay();
+            }
+        }
+        
+        // Format price with thousand separator
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+        
+        // Checkout functionality
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Keranjang belanja Anda kosong!');
+                return;
+            }
+            
+            // Show checkout modal
+            document.getElementById('checkout-modal').style.display = 'block';
+            
+            // Empty the cart
+            cart = [];
+            updateCartDisplay();
+        });
+        
+        // Checkout modal buttons
+        document.getElementById('checkout-close').addEventListener('click', function() {
+            document.getElementById('checkout-modal').style.display = 'none';
+        });
+        
+        document.getElementById('kembali-beranda').addEventListener('click', function() {
+            document.getElementById('checkout-modal').style.display = 'none';
+            showSection('beranda');
+        });
+        
+        // Contact form submission
+        document.getElementById('kontak-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show contact modal
+            document.getElementById('kontak-modal').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Contact modal buttons
+        document.getElementById('kontak-close').addEventListener('click', function() {
+            document.getElementById('kontak-modal').style.display = 'none';
+        });
+        
+        document.getElementById('tutup-kontak').addEventListener('click', function() {
+            document.getElementById('kontak-modal').style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
